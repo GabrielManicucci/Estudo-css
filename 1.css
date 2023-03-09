@@ -1,0 +1,96 @@
+/*----- página de estudos sobre o css ----------------- */
+
+/*  # css é uma linguagem style sheet, ou seja, uma linguagem estilização
+ - 
+ - # Anatomia 
+    - Selector: h1, div, p...
+    - Property: color: fontt-size
+    - Property Value: blue, 30px
+  . 
+*/
+
+/* -- Exemplo: --------------- 
+  h1 {
+  font-size: 45px;
+  color: blue;
+} */
+
+
+/* Selectors 
+
+ - Global selector: '*'
+ - type selector: h1, h2, p , div...
+ - ID selector: #box, #container
+ - Class selector: .red, .cart
+ - Atribute selector, Pseudo-class, Pseudo-element...
+
+*/
+
+
+/* --- Como funciona o css -------------
+
+ - # Funciona primeiro em modo "cascata", ou seja, o último seletor na página de cima para baixo será escolhido. 
+
+ - # Especificidade
+    -
+    - 0. Universal selector (*), combinators e pseudo-class
+    - 1. Element type selector (h1,p,...) e pseudo-elements (::after, ::before, ::scroll)
+    - 10. Classes e atribute selectors 
+    - 100. ID selector 
+    - 1000. Inline 
+*/
+
+
+
+/*h1 {
+  border: 1px solid red;
+  margin: 30px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  padding: auto;
+}*/
+
+/* --- # Exemplo de especificidade do css -----------------------------
+
+  /* Especificidade "Inline" localiza-se direto na tag do html */
+
+  /* especificidade "ID" */
+  #subtitle {
+    color: purple;
+  }
+
+  /* especificidade "class" */
+  .nothing {
+    color: green;
+  }
+
+  /* especificidade "type selector" */
+  h2 {
+    color: blue;
+  }
+
+  /* especificidade "Universal Selector" */
+  * {
+    color: red;
+  }
+
+/* -------------------------------------------------------------------- */
+
+
+
+/*---- # Regra "!important" -------------------------
+
+ - É usada para quebrar o fluxo original da cascata e sobrepor a todas as outras especificidades 
+ - não é considerada boa prática
+ - Evitar o uso 
+
+----------------------------------------------------*/
+
+
+
+
+
+
+ 
+  

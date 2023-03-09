@@ -1,0 +1,192 @@
+/* --- # Shorthand ------------- */
+  /*
+ - Junção de propriedadas das type selector 
+ - De forma resumida
+ - Legível 8? */
+
+  /*p {
+    background: green no-repeat url(images/bg.gif) no-repeat left top;
+  }
+
+  /* Propriedaes que aceitam shorthund: https://developer.mozilla.org/en-US/docs/web/css/shorthund_properties**
+
+------------------------------------- */
+ 
+
+
+/* - -Estratégia de "Box-Sizing" --------------
+
+ - Qual a função dessa estratégia ? 
+    - Ao utilzar tamanhos específicos de altura(height) e largura(width) nas tags html, a caixa será contada a partir do conteúdo e não da borda, ou seja, ao utilizar o "padding" a caixa aumentara de tamanho ao invés de obedecer ao tamanho estipulado antes. 
+    - Por isso se usa propriedade "box-sizing" com valor "border-box", para a caixa ser contada a partir da borda, então toda vez que se utilizar o padding, o css irá calcular sozinho o tamanho de todo o conteúdo da caixa sem aumenta-lá de tamanho.*/
+
+  /* Exemplo */
+  /*div.teste {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    margin: 10%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+  }
+/* ----------------------------------------------- */
+
+
+
+/* -- # Como funcionam os displays -----------------
+
+ - Display é como as caixas (tags - h1, div, section...) se compartam em relação às outras caixas 
+ - Compartamento exerno das caixas
+
+  - * Display Block
+   - ocupa toda a linha e modifica a próximo caixa para baixo
+   - width e height são respeitados
+   - padding, margin, border irão funcionar normalmente
+
+   - tags: <p>, <div>, <section>, <h1,h2...>
+
+      - * Display Inline (navegador entende como palavras)
+      - Elemento ao lado do outro
+      - width e height não funcionam 
+      - Somente valores horizontas para padding, margin, border
+      - tags: <a>, <strong>, <span>, <em>
+
+
+         - * Display inline block (junção dos dois)
+         - mantem as propriedades de caixa do block em linha
+
+
+           - * Display flex (função flex-box)
+           - torna o display da caixa flxével 
+           - usa o "flex-direction' paradirecionar em linha (row) e coluna(column)
+           - justify-content: posicionar conteúdos em relação ao eixo horizontal (center, flex-start,flex-end)
+           - align-items: posicionar conteúdo em relação ao eixo vertical (center, flex-start,flex-end) 
+
+-------------------------*/
+
+
+
+/* --- # COLORS ---------------------------
+
+ - * Hsl: Hue(matiz), saturation e lumiance
+
+---------------------------- */
+
+
+/* # -- Posistion ------------------------- 
+
+ - * É USADO PARA CRIAR LAYOUTS COM AS CAIXAS
+
+      - Static: position padrão
+
+      * Todos liberam as propriedades top, botton, left, right, z-index
+       - Relative: torna a posição do elemento relativa ao elemento anterior, liberando algumas propriedades, como 
+
+       - absolute: coloca a caixa em um estado relativo à caixa mãe, podendo alterar a posição da caixa somente dentro dos limites da caixa mãe. 
+         OBS: se a caixa mãe tiver um postion relative, o lemento ficará absoluto em relação a caixa mãe, caso não tenha ficará absoluto em relação a viewport
+
+      - fixed: fixo na página 
+
+*/
+
+
+
+/* --- # Background ------------
+
+  - * adicionar fundos a paginas
+     - 
+     - propriedade: background-image: url(...caminho do arquivo...);
+     - propriedade para posicionamento do back: background-size: cover;
+     
+----------------------*/
+
+
+/* --- # Responsividade -------------------------
+
+ - * Max-width ou Min-width: coloca um tamanho máximo para o seletor usado, dessa forma o navegador entende que se a caixa tiver menos que o tamanho indicado, ela ficará responsiva até chegar no tamanho indicado pelo max-widht. 
+ - usado em seletores com display block (div, section, form)
+ - Utiliza-se: "@media screen and (max-width: tamanho(X)) { código }
+
+/*
+
+
+
+/* --- #Overflow -------------
+
+  - * se refere ao scroll(barra de rolagem) da página inteira(body) ou daas tags
+
+    - Valores: 
+      - hidden: deixa vísivel só o conteúdo que cabe na caixa, escondendo o excesso
+      - auto: pode ser scroll ou hidden dependendo do conteúdo
+      - visible (padrão)
+      - scroll: adiciona barra de rolagem
+*/
+
+
+
+
+/* ---- # Função flexbox (Caixa flexível) no css ----------
+
+  - * Serve para criar leyouts(posicionamento das divs) responsivos nos sites 
+    
+      ( deve ser adicionado na div ou tag pai)
+    - Display: flex; (torna o display flexível tanto para coluna como linha)
+
+    * Libera alguns atributos como:
+      - flex-direction: row; (colunm ou row)
+      - justify-content: posicionar conteúdos em relação ao eixo horizontal (center, flex-start,flex-end, space-between)
+            - align-items: posicionar conteúdo em relação ao eixo vertical (center, flex-start,flex-end) 
+
+*/
+
+
+
+/* --- # Flex-wrap (Caixa flexível) ---------------
+
+  - * Serve para criar caixas com tamanhos flexíveis em relação ao conteúdo de dentro delas, ou seja, a caixa aumenta conforme a quantidade de conteúdo;
+
+    - flex-wrap: nowwrap (padrão, sem estar flexível)
+    - flex-wrap: wrap (flexível)
+*/
+
+
+
+/* ---- Espaço ocupado pelas "caixas" no espaço disponível 
+
+ - flex: 20%, 50%... (Ajusta-se confome o espaço disponível)
+
+*/
+ 
+
+
+/* -- Grid ------------------ */
+
+
+/* Unidades de medida
+
+  # Absolutas 
+    -px
+    -cm
+    -mm
+
+  # Relativas
+
+    * relativas à viewport (proporcionais 100% = 100vw / 10vw = 10%
+      - vh = viewport heigth
+      - vw = viewport width
+      - vmin
+      - vmax
+    
+    * relativas à medida universal do google (acessibilidade)
+      - rem = relativo ao root da aplicação html
+      - em = relativo aos padrões de acesibilidade do google (16px)
+      OBS: 
+        - tamanho de fontes padrão do google é 16px
+        - 1em = 16px
+
+    
+
+*/
+
+
+
